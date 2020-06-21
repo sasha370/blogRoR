@@ -7,7 +7,11 @@ class ContactsController < ApplicationController
   # данный метод нужен для оюработки отправленных на сервер данных  и записи их в БД
   def create
     @contact = Contact.new(contact_params)
+    if @contact.valid?
     @contact.save
+    else
+      render action: "new"
+    end
   end
 
 
