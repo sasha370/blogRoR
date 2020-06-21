@@ -39,7 +39,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-
   # метод принимает на сервере данные из EDIT
   def update
     @article = Article.find(params[:id]) # ищем в БД необходимый пост
