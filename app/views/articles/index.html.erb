@@ -1,0 +1,10 @@
+<h3> Список всех статей </h3>
+
+<P> <% @articles.each do |item| %>
+<%= item.title %>
+    </br>
+ <span >   <%= item.created_at %> </span>
+<% end %>
+</P>
+
+<button type="button" onclick="/views/article/new"> Создать статью </button>
