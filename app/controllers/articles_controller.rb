@@ -4,12 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-
   end
-
-
-
-
   # вторым шагом надо прописать обработчик для действия new
   def new
   end
@@ -23,9 +18,11 @@ class ArticlesController < ApplicationController
     # Проверяем, если переменная создалась, то мы ее записываем в БД
     if @article.valid?
       @article.save
+      # вместо метода Create мы перенаправляем на метод SHOW с помощью юданной команды. это позволяет избавиться от Вьюхи Create
+      redirect_to @article
     else
       # Если не создалась, то просто вызвращаем на стартовую страницу
-      render plain: 'new'
+      render action:  'new'
     end
 
   end

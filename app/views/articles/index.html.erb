@@ -4,7 +4,8 @@
 <%= item.title %>
     </br>
  <span >   <%= item.created_at %> </span>
+    </br>
 <% end %>
 </P>
 
-<button type="button" onclick="/views/article/new"> Создать статью </button>
+<button type="button" onclick="<%= articles_path %>"> Создать статью </button>
