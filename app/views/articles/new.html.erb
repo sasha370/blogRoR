@@ -1,0 +1,21 @@
+<h1> New Artical</h1>
+
+
+<!--Данным методом form_for  выводится базовая форма с шифрованием и методом POST? которая прописывает передачу по адресу article/new-->
+
+<!--Чтобы форма передавала наш POST запрос нужно в первой строчке дописать url для перенаправления. -->
+<%= form_for :article, url:  articles_path do |f|  %>
+  <p>
+<%= f.label :title %>
+    <br/>
+<!--    метод text_field создает новое текстовое поля в форме -->
+  <%= f.text_field :title %></p>
+  <p>
+  <%= f.label :text %>
+    <br/>
+    <%= f.text_area :text %>
+  </p>
+  <p>
+   <%= f.submit %>
+  </p>
+<% end %>
