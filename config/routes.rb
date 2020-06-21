@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # Данная строчка показывает маршрут к Контролеру Contact у которого разрешены только просмотр и создание нового ( методы NEW и CREATE )
   # метод path_names перенаправляет стандартный new на пустую строчку, чтобы убрать из URL
   resource :contacts,  only: [:new, :create], path_names:  {:new => ''}
-
+  resource :terms,  only: [:new], path_names:  {:new => ''}
+  resource :about,  only: [:new], path_names:  {:new => ''}
+  all_environmentsq
   resources :articles
 
 
