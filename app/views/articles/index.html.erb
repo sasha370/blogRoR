@@ -1,12 +1,13 @@
 <h3> Список всех статей </h3>
-
-<p> <p> <% @articles.each do |item| %>
+<div>
+<p> <% @articles.each do |item| %>
     Название статьи: <%= item.title %></p>
 
  <p> Текст:   <%= item.text %>
     <span > Создано:  <%= item.created_at %> </span> </p>
 <!--ссылки лучше вставлять вот в таком виде-->
-    <%= link_to "Подробнее", article_path(item) %>  </br>
+    <%= link_to "Подробнее", article_path(item) %> |
+    <%= link_to "Редактировать", edit_article_path(item) %>  </br>
 <% end %>
   </br>
 </div>
