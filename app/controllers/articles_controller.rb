@@ -27,6 +27,10 @@ class ArticlesController < ApplicationController
 
   end
 
+  # Метод отображает страницу с соответсвующим постом
+  def show
+    @article =Article.find(params[:id])
+  end
 
   # Создаем отдельный приватный метод, который разрешает передачу Полей из форму в нашу БД
 
