@@ -50,7 +50,14 @@ class ArticlesController < ApplicationController
   end
 
 
-
+def destroy
+  @article = Article.find(params[:id])
+  if  @article.destroy
+    render action: 'destroy'
+  else
+    render action: ''
+  end
+end
   # Создаем отдельный приватный метод, который разрешает передачу Полей из форму в нашу БД
 
   private

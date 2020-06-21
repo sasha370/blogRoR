@@ -7,9 +7,10 @@
     <span > Создано:  <%= item.created_at %> </span> </p>
 <!--ссылки лучше вставлять вот в таком виде-->
     <%= link_to "Подробнее", article_path(item) %> |
-    <%= link_to "Редактировать", edit_article_path(item) %>  </br>
-<% end %>
-  </br>
+    <%= link_to "Редактировать", edit_article_path(item) %> | <%= link_to "Удалить", item, :confirm => 'Вы  уверены?', method: :delete %>  </br>
+    <hr>
+  <% end %>
+  <hr>
 </div>
 
 <!--<button type="button" onclick="<%#= articles_path %>"> Создать статью </button>-->
