@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     # находим нужную статью по ее ШВ
-    @article = Artical.Find(params[article_id])
+    @article = Article.find(params[:article_id])
     # в ней создаем новый комментарий
     @article.comments.create({author: "Mike", body: "Привет"})
 
