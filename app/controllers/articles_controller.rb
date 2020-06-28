@@ -2,7 +2,7 @@
 
 class ArticlesController < ApplicationController
   # Этой строчкой закрываем доступ ко всем Статья для неавторизованных пользователе
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @articles = Article.all
