@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<body>
+<!--Этот DIV дожен быть всегда и содержать класс container? чтобы задавались поля для всего сайта -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
 <!--  добавляем ссылки на Логин. Во второй ссылке добавлен атрибут data-method, т.к. для выхода нам надо использовать методл DELETE -->
 <!--URL ссылок получены при ошибочном вводе в URL поле -->
 
@@ -17,17 +21,20 @@
 <!--если Да, то отображаем только ссылку Выйти-->
 
 <% if user_signed_in? %>
-  Пользователь:<%= current_user.username %> |  <%= link_to "Выйти", destroy_user_session_path , method: :delete %>
+    Пользователь:<%= current_user.username %> |  <%= link_to "Выйти", destroy_user_session_path , method: :delete %>
   <% else %>
-  <%= link_to "Войти", new_user_session_path %>
+    <%= link_to "Войти", new_user_session_path %>
   <% end %>
-<!--  Две строки добавлены при установке DEVISE конструктора -->
+  <!--  Две строки добавлены при установке DEVISE конструктора -->
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
 
 
   <%= yield %>
+    </div>
+  </div>
     <%= link_to "Список статей", articles_path %> | <%= link_to " Создать статью", "/articles/new" %>
-  </body>
+</div>
+</body>
 </html>
