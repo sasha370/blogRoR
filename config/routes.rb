@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+
   get '/', to: 'home#index'
   get 'terms' => 'pages#terms'
   get 'about' => 'pages#about'

@@ -10,7 +10,14 @@
   </head>
 
   <body>
-    <%= yield %>
+
+<!--  Две строки добавлены при установке DEVISE конструктора -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+
+
+  <%= yield %>
     <%= link_to "Список статей", articles_path %> | <%= link_to " Создать статью", "/articles/new" %>
   </body>
 </html>

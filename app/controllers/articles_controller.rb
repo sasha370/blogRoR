@@ -1,6 +1,8 @@
 # данный контроллер был добавлен с помощью   rails g controller articles
 
 class ArticlesController < ApplicationController
+  # Этой строчкой закрываем доступ ко всем Статья для неавторизованных пользователе
+  # before_action :authenticate_user!
 
   def index
     @articles = Article.all
