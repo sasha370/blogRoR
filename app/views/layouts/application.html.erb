@@ -14,7 +14,7 @@
 <!--URL ссылок получены при ошибочном вводе в URL поле -->
 
 <% if user_signed_in? %>
-    <%= link_to "Выйти", destroy_user_session_path , method: :delete %>
+  User:<%= current_user.email %> |  <%= link_to "Выйти", destroy_user_session_path , method: :delete %>
   <% else %>
   <%= link_to "Войти", new_user_session_path %>
   <% end %>
