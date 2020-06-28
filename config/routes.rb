@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
 
   resources :articles do # в двнном случае DO добавлет вложенные маршруты для Comments
-    resources :comments
+    resources :comments,  only: [:create]
+
   end
 
 
