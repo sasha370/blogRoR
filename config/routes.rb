@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resource :contacts,  only: [:new, :create], path_names:  {:new => ''}
 
 
-  resources :articles
+  resources :articles do # в двнном случае DO добавлет вложенные маршруты для Comments
+    resources :comments
+  end
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
