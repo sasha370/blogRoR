@@ -10,7 +10,10 @@
   </head>
 
   <body>
-<a href="/users/sign_in"> Войти </a> |  <a href="/users/sign_out" data-method = "delete"> Выйти  </a>
+<!--  добавляем ссылки на Логин. Во второй ссылке добавлен атрибут data-method, т.к. для выхода нам надо использовать методл DELETE -->
+<!--URL ссылок получены при ошибочном вводе в URL поле -->
+<%= link_to "Войти", new_user_session_path %> | <%= link_to "Выйти", destroy_user_session_path , method: :delete %>
+
 <!--  Две строки добавлены при установке DEVISE конструктора -->
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
