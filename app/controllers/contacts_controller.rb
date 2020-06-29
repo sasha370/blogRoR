@@ -1,15 +1,18 @@
 class ContactsController < ApplicationController
   # данный метод нужен для получения простой страницы с сервера
-  def new
+  def index
+    @contacts = Contact.all
+  end
 
+  def new
   end
 
   # данный метод нужен для оюработки отправленных на сервер данных  и записи их в БД
   def create
     @contact = Contact.new(contact_params)
     # Проверяем, если переменная создалась, то мы ее записываем в БД
-    if @contact.valid?
-    @contact.save
+    if @contact.save
+      redirect_to contacts_path
     else
       # Если не создалась, то просто вызвращаем на стартовую страницу
       render action: "new"

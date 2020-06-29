@@ -1,0 +1,16 @@
+<h1> Список всех контактов </h1>
+
+<div>
+  <p>
+    <% @contacts.each do |item| %>
+      <i> <%= item.email %>: </i>
+      <%= item.message %>
+      <br/>
+      <hr>
+    <% end %>
+
+    <!--ссылки лучше вставлять вот в таком виде-->
+    <%= link_to "Создать нового ", new_contact_path %> |
+    <hr>
+     <hr>
+    </div>
