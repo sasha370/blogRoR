@@ -13,9 +13,6 @@ class ArticlesController < ApplicationController
   end
 
 
-
-
-
   # далее создаем файл в папке views/article? который автоматом будет привязан по названия к данному контроллеру
   # данный контролер\метод нужен для того, чтобы создать новую запись используя страницу new и кнопку submit
   def create
@@ -39,34 +36,35 @@ class ArticlesController < ApplicationController
   # В петоде Edit отображается тоже самое что и SHOW т.к. это просто показ карточки
   def edit
     @article = Article.find(params[:id])
-  end
+      end
 
-  # метод принимает на сервере данные из EDIT
-  def update
-    @article = Article.find(params[:id]) # ищем в БД необходимый пост
-    if @article.update(article_params) # проверяем, правильно ли все апгреднулось
-      redirect_to @article # если да, то перенаправляем на саму статью
-    else
-      render action: 'edit' # если нет, то возвращаем в форму редактирования
+    # метод принимает на сервере данные из EDIT
+    def update
+      @article = Article.find(params[:id]) # ищем в БД необходимый пост
+      if @article.update(article_params) # проверяем, правильно ли все апгреднулось
+        redirect_to @article # если да, то перенаправляем на саму статью
+      else
+        render action: 'edit' # если нет, то возвращаем в форму редактирования
+      end
     end
+
+
+    def destroy
+      @article = Article.find(params[:id])
+
+      if @article.destroy
+        render action: 'destroy'
+      else
+        render action: ''
+      end
+    end
+
+    # Создаем отдельный приватный метод, который разрешает передачу Полей из форму в нашу БД
+
+    private
+
+    def article_params
+      params.require(:article).permit(:title, :text)
+    end
+
   end
-
-
-def destroy
-  @article = Article.find(params[:id])
-
-  if  @article.destroy
-    render action: 'destroy'
-  else
-    render action: ''
-  end
-end
-  # Создаем отдельный приватный метод, который разрешает передачу Полей из форму в нашу БД
-
-  private
-
-  def article_params
-    params.require(:article).permit(:title, :text)
-  end
-
-end
