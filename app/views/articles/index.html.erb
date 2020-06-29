@@ -7,7 +7,7 @@
     <span > Создано:  <%= item.created_at %> </span> </p>
 <!--ссылки лучше вставлять вот в таком виде-->
     <%= link_to "Подробнее", article_path(item) %> |
-    <%= link_to "Редактировать", edit_article_path(item) %> | <%= link_to "Удалить", item,  method: :delete , data: {confirm: 'Вы  уверены?'}  %>  </br>
+    <%= link_to "Редактировать", edit_article_path(item) %> | <%= link_to "Удалить", item, method: :delete , data: {confirm: 'Вы  уверены?'}  %>  </br>
     <hr>
   <% end %>
   <hr>

@@ -1,24 +1,12 @@
-# README
+Тестовое приложение Блог
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Во время разработки изучил:
+- Контроллеры-Модели-Отображения
+- ActiveRecord и миграции
+- Gem Devise
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Сложности:
+- не совсем понятна цепочка взаимодействия Контроллер - модель - вьюха
+- 

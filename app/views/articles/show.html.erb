@@ -22,12 +22,12 @@
 <!--второй - это создание нового лемента в коллекции, который поможет присвоить ID-ки -->
 <h3> Добавить комментарий </h3>
 <%= form_for([@article, @article.comments.build]) do |f|  %>
-  <p>
-    <%= f.label :author %>
-    <br/>
-    <!--    метод text_field создает новое текстовое поля в форме -->
-    <%= f.text_field :author %></p>
-  <p>
+<!--  <p>-->
+    <%#= f.label :author %>
+<!--    <br/>-->
+<!--
+<!--    <%#= f.text_field current_user.username %></p>-->
+<!--  <p>-->
     <%= f.label :body %>
     <br/>
     <%= f.text_area :body %>

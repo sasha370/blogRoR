@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
     # на вход принимает проверенные данные из метода Comments_params
     comment =  @article.comments.new(comment_params)
 
-    TODO
     if user_signed_in?
       comment.author = current_user.username
       comment.save
@@ -25,7 +24,7 @@ class CommentsController < ApplicationController
   private
   # метод разрешвет принимать которые указанны вконце
   def comment_params
-    params.require(:comment).permit(:author, :body)
+    params.require(:comment).permit( :author, :body)
   end
 
 end
