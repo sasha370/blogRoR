@@ -1,5 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
@@ -69,5 +71,8 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  # Строчка которую нужно добавить для РАБОТЫ FACTORYBOT
+  Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 end
