@@ -8,10 +8,12 @@ class CommentsController < ApplicationController
     # на вход принимает проверенные данные из метода Comments_params
     comment =  @article.comments.new(comment_params)
 
+    # Если юзер залогинен, то мы полю Author присваива username и сохраняемс в БД
     if user_signed_in?
       comment.author = current_user.username
       comment.save
     else
+      # если не залоген, то отправляем на страницу Регистрации
       redirect_to new_user_session_path
     end
     # перенаправляем на страницу с данным Статьей
